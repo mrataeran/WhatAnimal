@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hbt-BZ-HsE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatAnimal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyu-Iz-obE">
+                                <rect key="frame" x="161" y="413" width="90" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="photo.on.rectangle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
+                                </state>
+                                <connections>
+                                    <action selector="galleryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKX-Yc-oEp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OTr-bH-d3q"/>
+                    <connections>
+                        <segue destination="gFY-oi-UnA" kind="presentation" identifier="toWiki" id="qJY-Zj-dmx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
+        </scene>
+        <!--Wiki View Controller-->
+        <scene sceneID="6c7-Fq-Mxa">
+            <objects>
+                <viewController id="gFY-oi-UnA" customClass="WikiViewController" customModule="WhatAnimal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7e-IH-hdV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qba-7p-m6q">
+                                <rect key="frame" x="20" y="20" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qba-7p-m6q" secondAttribute="height" multiplier="1:1" id="v9q-WC-vlW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-f1-JV6">
+                                <rect key="frame" x="20" y="414" width="374" height="394"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K3u-zA-MQK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lgd-f1-JV6" firstAttribute="leading" secondItem="K3u-zA-MQK" secondAttribute="leading" constant="20" id="4sM-F9-3Xa"/>
+                            <constraint firstItem="qba-7p-m6q" firstAttribute="leading" secondItem="K3u-zA-MQK" secondAttribute="leading" constant="20" id="5fR-QG-Vne"/>
+                            <constraint firstItem="lgd-f1-JV6" firstAttribute="bottom" secondItem="K3u-zA-MQK" secondAttribute="bottom" id="PBu-v8-ywL"/>
+                            <constraint firstItem="lgd-f1-JV6" firstAttribute="top" secondItem="qba-7p-m6q" secondAttribute="bottom" constant="20" id="Rcj-Nx-lse"/>
+                            <constraint firstItem="K3u-zA-MQK" firstAttribute="trailing" secondItem="lgd-f1-JV6" secondAttribute="trailing" constant="20" id="S26-Vj-vQo"/>
+                            <constraint firstItem="qba-7p-m6q" firstAttribute="top" secondItem="K3u-zA-MQK" secondAttribute="top" constant="20" id="Vmd-xJ-WMX"/>
+                            <constraint firstAttribute="trailing" secondItem="qba-7p-m6q" secondAttribute="trailing" constant="20" id="kna-ug-YML"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalDesctiptionLabel" destination="lgd-f1-JV6" id="Zz4-LA-yIF"/>
+                        <outlet property="animalImageView" destination="qba-7p-m6q" id="reE-0h-IMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sw8-oQ-aHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679.7101449275362" y="91.741071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mvh-rm-WMW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hbt-BZ-HsE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lgh-nM-ndS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Red-Me-Fv0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfi-gB-o3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
